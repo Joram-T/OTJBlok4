@@ -41,7 +41,11 @@ if __name__ == '__main__':
     route = []
 
     extensions = ['jpg', 'jpeg', 'png', 'tiff', 'raw']
-    path = "C:/Users/Joram/Downloads/UFED samsung SM-A155F 2024_04_25 (001)/UFED samsung SM-A155F 2024_04_25 (001)/EXTRACTION_FFS 01"#input('Enter folder path..\n')
+    while True:
+        path = input('Enter a folder')
+        if os.path.exists(path):
+            break
+        print('Enter a valid folder path')
 
     for root, dirs, files in os.walk(path): #Bron 1
         for name in files:
